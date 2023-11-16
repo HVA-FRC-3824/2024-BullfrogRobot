@@ -2,8 +2,6 @@
 
 void Grabber::spin_grabber(double value)
 {
-    for(int i = 0; i < 2 ; i++)
-    {
-        this->MOTORS[i].Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, value);
-    }
+    this->MOTORS[0].Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, value);
+    this->MOTORS[1].Set(ctre::phoenix::motorcontrol::ControlMode::PercentOutput, -value);
 }
