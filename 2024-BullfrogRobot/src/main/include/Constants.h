@@ -5,6 +5,6 @@
 #define MOTOR_ONE_CAN_ID 4
 #define MOTOR_TWO_CAN_ID 17
 /* Actuator */
-
+#define ACTUATOR_CAN_ID 42
 
 #endif

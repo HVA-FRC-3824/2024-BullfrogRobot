@@ -8,9 +8,11 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/Joystick.h>
 #include "../include/subsystems/Grabber.hpp"
+#include "../include/subsystems/LinearActuator.hpp"
 
 frc::Joystick Jostick { 0 };
 Grabber Grabby{};
+LinearActuator actuate{};
 
 void Robot::RobotInit() {
   m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
@@ -29,6 +31,8 @@ void Robot::RobotInit() {
 void Robot::RobotPeriodic() 
 {
   Grabby.spin_grabber(Jostick.GetRawAxis(2)-Jostick.GetRawAxis(3));
+  actuate.actuate(-Jostick.GetY());
+  
 }
 
 /**

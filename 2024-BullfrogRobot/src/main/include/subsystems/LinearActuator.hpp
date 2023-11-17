@@ -2,7 +2,7 @@
 #define LINEAR
 
 #include <frc2/command/SubsystemBase.h>
-#include <ctre/pheonix/motorcontrol/can/WPI_TalonSRX.h>
+#include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
 #include "../Constants.h"
 
 using namespace ctre::phoenix::motorcontrol::can;
@@ -16,7 +16,7 @@ class LinearActuator : frc2::SubsystemBase
     public:
         void actuate(double input);
     private:
-        WPI_TalonSRX ACTUATOR_CONTROLLER{/* Put constant here */};
+        WPI_TalonSRX ACTUATOR_CONTROLLER{42};
 };
 
 
